@@ -1,0 +1,27 @@
+@model Assignment4.Models.Borrowing
+@{
+    ViewData["Title"] = "Delete Borrowing";
+}
+
+<div class="card border-danger" style="max-width:500px">
+    <div class="card-header text-danger">🗑️ Confirm Delete</div>
+    <div class="card-body">
+        <p>Are you sure you want to delete this borrowing record?</p>
+        <dl class="row">
+            <dt class="col-sm-4 form-label">Book</dt>
+            <dd class="col-sm-8"><strong>@Model.Book?.Title</strong></dd>
+            <dt class="col-sm-4 form-label">Reader</dt>
+            <dd class="col-sm-8">@Model.Reader?.Name</dd>
+            <dt class="col-sm-4 form-label">Status</dt>
+            <dd class="col-sm-8">@Model.Status</dd>
+        </dl>
+        <div class="alert alert-warning small">⚠️ This action cannot be undone.</div>
+    </div>
+    <div class="card-footer d-flex gap-2">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger btn-sm">Yes, Delete</button>
+        </form>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Cancel</a>
+    </div>
+</div>

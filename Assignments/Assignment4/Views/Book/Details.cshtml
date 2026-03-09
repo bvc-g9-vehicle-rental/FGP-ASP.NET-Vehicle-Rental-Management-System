@@ -1,0 +1,65 @@
+@model Assignment4.Models.Book
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="card" style="max-width:700px">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span>📖 @Model.Title</span>
+        @if (Model.IsAvailable)
+        {
+            <span class="badge-available">Available</span>
+        }
+        else
+        {
+            <span class="badge-unavailable">Fully Borrowed</span>
+        }
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 form-label">Author</dt>
+            <dd class="col-sm-9">@Model.Author</dd>
+
+            <dt class="col-sm-3 form-label">ISBN</dt>
+            <dd class="col-sm-9"><code>@(Model.ISBN ?? "—")</code></dd>
+
+            <dt class="col-sm-3 form-label">Genre</dt>
+            <dd class="col-sm-9">@(Model.Genre ?? "—")</dd>
+
+            <dt class="col-sm-3 form-label">Published Year</dt>
+            <dd class="col-sm-9">@(Model.PublishedYear?.ToString() ?? "—")</dd>
+
+            <dt class="col-sm-3 form-label">Copies</dt>
+            <dd class="col-sm-9">@Model.AvailableCopies available / @Model.TotalCopies total</dd>
+        </dl>
+
+        @if (Model.Borrowings.Any())
+        {
+            <h6 class="mt-4 mb-2">Borrowing History</h6>
+            <table class="table table-sm table-bordered">
+                <thead><tr><th>Reader</th><th>Borrowed</th><th>Due</th><th>Status</th></tr></thead>
+                <tbody>
+                    @foreach (var b in Model.Borrowings.OrderByDescending(x => x.BorrowDate))
+                    {
+                        <tr>
+                            <td>@b.Reader?.Name</td>
+                            <td>@b.BorrowDate.ToString("MMM d, yyyy")</td>
+                            <td>@b.DueDate.ToString("MMM d, yyyy")</td>
+                            <td>
+                                @{
+                                    var cls = b.Status switch { "Overdue" => "badge-overdue", "Returned" => "badge-returned", _ => "badge-active" };
+                                }
+                                <span class="@cls">@b.Status</span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+    <div class="card-footer d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Back to List</a>
+    </div>
+</div>

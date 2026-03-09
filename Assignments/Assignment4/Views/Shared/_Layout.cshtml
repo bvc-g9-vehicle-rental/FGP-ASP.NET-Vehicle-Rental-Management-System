@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body { background-color: #f4f6f9; }
+
+        /* Sidebar */
+        #sidebar {
+            width: 240px;
+            min-height: 100vh;
+            background: #1e2a38;
+            color: #ffffff;
+            position: fixed;
+            top: 0; left: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+        #sidebar .sidebar-brand {
+            padding: 22px 20px 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #2e3e52;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        #sidebar .sidebar-brand span { color: #5b9bd5; }
+        #sidebar .nav-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #6c8399;
+            padding: 18px 20px 6px;
+        }
+        #sidebar .nav-link {
+            color: #c9d8e8;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 6px;
+            margin: 2px 8px;
+            font-size: 0.93rem;
+            transition: background 0.15s;
+        }
+        #sidebar .nav-link:hover,
+        #sidebar .nav-link.active { background: #2e3e52; color: #ffffff; }
+        #sidebar .nav-link .icon { font-size: 1.1rem; width: 20px; text-align: center; }
+
+        /* Top navbar */
+        #topbar {
+            margin-left: 240px;
+            background: #ffffff;
+            border-bottom: 1px solid #e0e4ea;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        #topbar .page-title { font-weight: 600; font-size: 1.05rem; color: #1e2a38; margin: 0; }
+
+        /* Main content */
+        #main-content {
+            margin-left: 240px;
+            padding: 28px;
+            min-height: calc(100vh - 57px);
+        }
+
+        /* Cards & tables */
+        .card { border: none; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+        .card-header { background: #ffffff; border-bottom: 1px solid #e8ecf0; font-weight: 600; border-radius: 10px 10px 0 0 !important; }
+        .table thead { background: #1e2a38; color: #ffffff; }
+        .table th { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.3px; }
+        .btn-primary { background: #2563eb; border-color: #2563eb; }
+        .btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+        .badge-available { background: #d1fae5; color: #065f46; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .badge-unavailable { background: #fee2e2; color: #991b1b; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .badge-active   { background: #dbeafe; color: #1e40af; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .badge-overdue  { background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .badge-returned { background: #d1fae5; color: #065f46; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .form-label { font-weight: 500; font-size: 0.88rem; }
+        .alert-success { background: #d1fae5; border-color: #6ee7b7; color: #065f46; }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav id="sidebar">
+    <a asp-controller="Home" asp-action="Index" class="sidebar-brand">
+        📚 <span>LMS</span> Assignment 4
+    </a>
+    <div class="nav-label">Navigation</div>
+    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")"
+       asp-controller="Home" asp-action="Index">
+        <span class="icon">🏠</span> Dashboard
+    </a>
+    <div class="nav-label">Manage</div>
+    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Book" ? "active" : "")"
+       asp-controller="Book" asp-action="Index">
+        <span class="icon">📖</span> Books
+    </a>
+    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Reader" ? "active" : "")"
+       asp-controller="Reader" asp-action="Index">
+        <span class="icon">👥</span> Readers
+    </a>
+    <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Borrowing" ? "active" : "")"
+       asp-controller="Borrowing" asp-action="Index">
+        <span class="icon">🔄</span> Borrowings
+    </a>
+</nav>
+
+<!-- Top bar -->
+<div id="topbar">
+    <h6 class="page-title">@(ViewData["Title"] ?? "Library Management System")</h6>
+    <small class="text-muted">Assignment 4 — Entity Framework</small>
+</div>
+
+<!-- Main content -->
+<div id="main-content">
+    @if (TempData["Success"] is string msg)
+    {
+        <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+            ✅ @msg
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @RenderBody()
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

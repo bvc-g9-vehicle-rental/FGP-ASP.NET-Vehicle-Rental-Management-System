@@ -1,0 +1,54 @@
+@model Assignment4.Models.Borrowing
+@{
+    ViewData["Title"] = "Borrowing Details";
+}
+
+<div class="card" style="max-width:550px">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span>🔄 Borrowing #@Model.Id</span>
+        @{
+            var cls = Model.Status switch { "Overdue" => "badge-overdue", "Returned" => "badge-returned", _ => "badge-active" };
+        }
+        <span class="@cls">@Model.Status</span>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4 form-label">Book</dt>
+            <dd class="col-sm-8"><strong>@Model.Book?.Title</strong></dd>
+
+            <dt class="col-sm-4 form-label">Reader</dt>
+            <dd class="col-sm-8">@Model.Reader?.Name</dd>
+
+            <dt class="col-sm-4 form-label">Borrow Date</dt>
+            <dd class="col-sm-8">@Model.BorrowDate.ToString("MMMM d, yyyy")</dd>
+
+            <dt class="col-sm-4 form-label">Due Date</dt>
+            <dd class="col-sm-8 @(Model.IsOverdue ? "text-danger fw-bold" : "")">
+                @Model.DueDate.ToString("MMMM d, yyyy")
+            </dd>
+
+            @if (Model.IsReturned)
+            {
+                <dt class="col-sm-4 form-label">Return Date</dt>
+                <dd class="col-sm-8">@Model.ReturnDate?.ToString("MMMM d, yyyy")</dd>
+            }
+
+            @if (Model.IsOverdue)
+            {
+                <dt class="col-sm-4 form-label">Overdue</dt>
+                <dd class="col-sm-8 text-danger">@Model.OverdueDays days — Fee: $@Model.OverdueFee.ToString("0.00")</dd>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Notes))
+            {
+                <dt class="col-sm-4 form-label">Notes</dt>
+                <dd class="col-sm-8">@Model.Notes</dd>
+            }
+        </dl>
+    </div>
+    <div class="card-footer d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Edit</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Back to List</a>
+    </div>
+</div>

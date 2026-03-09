@@ -1,0 +1,89 @@
+@model IEnumerable<Assignment4.Models.Borrowing>
+@{
+    ViewData["Title"] = "Borrowings";
+}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span>🔄 All Borrowings</span>
+        <a asp-action="Create" class="btn btn-secondary btn-sm">+ New Borrowing</a>
+    </div>
+    <div class="card-body">
+        <!-- Search Bar -->
+        <form asp-action="Index" method="get" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="searchString" value="@ViewData["CurrentFilter"]"
+                       class="form-control" placeholder="Search by book title, reader name or status..." />
+                <button class="btn btn-outline-secondary" type="submit">🔍 Search</button>
+                @if (!string.IsNullOrEmpty(ViewData["CurrentFilter"]?.ToString()))
+                {
+                    <a asp-action="Index" class="btn btn-outline-secondary">✕ Clear</a>
+                }
+            </div>
+        </form>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info">
+                @if (!string.IsNullOrEmpty(ViewData["CurrentFilter"]?.ToString()))
+                {
+                    <text>No borrowings match "<strong>@ViewData["CurrentFilter"]</strong>". <a asp-action="Index">Show all</a>.</text>
+                }
+                else
+                {
+                    <text>No borrowing records found.</text>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Book</th>
+                            <th>Reader</th>
+                            <th>Borrowed</th>
+                            <th>Due Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var b in Model)
+                        {
+                            <tr>
+                                <td class="text-muted">@b.Id</td>
+                                <td><strong>@b.Book?.Title</strong></td>
+                                <td>@b.Reader?.Name</td>
+                                <td>@b.BorrowDate.ToString("MMM d, yyyy")</td>
+                                <td class="@(b.IsOverdue ? "text-danger fw-bold" : "")">
+                                    @b.DueDate.ToString("MMM d, yyyy")
+                                    @if (b.IsOverdue)
+                                    {
+                                        <br /><small>@b.OverdueDays days late</small>
+                                    }
+                                </td>
+                                <td>@(b.ReturnDate?.ToString("MMM d, yyyy") ?? "—")</td>
+                                <td>
+                                    @{
+                                        var cls = b.Status switch { "Overdue" => "badge-overdue", "Returned" => "badge-returned", _ => "badge-active" };
+                                    }
+                                    <span class="@cls">@b.Status</span>
+                                </td>
+                                <td class="text-center">
+                                    <a asp-action="Details" asp-route-id="@b.Id" class="btn btn-sm btn-outline-secondary">Details</a>
+                                    <a asp-action="Edit"    asp-route-id="@b.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <a asp-action="Delete"  asp-route-id="@b.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-muted small mt-2">@Model.Count() borrowing(s) found</div>
+        }
+    </div>
+</div>
