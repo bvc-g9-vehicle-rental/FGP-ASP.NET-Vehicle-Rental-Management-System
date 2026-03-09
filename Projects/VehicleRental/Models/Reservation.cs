@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehicleRental.Models;
 
@@ -34,5 +35,6 @@ public class Reservation
     [StringLength(500, ErrorMessage = "Notes cannot exceed 500 characters.")]
     public string Notes { get; set; } = string.Empty;
 
+    [NotMapped]
     public int RentalDays => EndDate > StartDate ? (EndDate - StartDate).Days : 1;
 }

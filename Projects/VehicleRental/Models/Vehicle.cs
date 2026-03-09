@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehicleRental.Models;
 
@@ -34,5 +35,6 @@ public class Vehicle
     [Display(Name = "Available")]
     public bool IsAvailable { get; set; } = true;
 
+    [NotMapped]
     public string DisplayName => $"{Year} {Make} {Model}";
 }

@@ -1,7 +1,6 @@
 @model Borrowing
 @{
     ViewData["Title"] = "Borrowing Details";
-    var isOverdue = !Model.IsReturned && Model.DueDate < DateTime.Today;
 }
 
 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -9,9 +8,20 @@
     <a asp-action="Index" class="btn btn-outline-secondary">← Back to Borrowings</a>
 </div>
 
-@if (isOverdue)
+@if (Model.IsOverdue)
 {
-    <div class="alert alert-danger">⚠️ This borrowing is <strong>overdue</strong> by @((DateTime.Today - Model.DueDate).Days) day(s).</div>
+    <div class="alert alert-danger">
+        ⚠️ This borrowing is <strong>overdue by @Model.OverdueDays day(s)</strong>.
+        Accumulated fine: <strong class="fs-5">$@Model.OverdueFee.ToString("F2")</strong>
+        (@ $@Borrowing.DailyOverdueFee.ToString("F2")/day)
+    </div>
+}
+@if (Model.IsReturned && Model.OverdueFee > 0)
+{
+    <div class="alert alert-warning">
+        This item was returned <strong>@Model.OverdueDays day(s) late</strong>.
+        Late return fine: <strong>$@Model.OverdueFee.ToString("F2")</strong>
+    </div>
 }
 
 <div class="row">
@@ -27,7 +37,7 @@
             <dd class="col-sm-8">@Model.BorrowDate.ToString("MMMM d, yyyy")</dd>
 
             <dt class="col-sm-4">Due Date</dt>
-            <dd class="col-sm-8 @(isOverdue ? "text-danger fw-bold" : "")">@Model.DueDate.ToString("MMMM d, yyyy")</dd>
+            <dd class="col-sm-8 @(Model.IsOverdue ? "text-danger fw-bold" : "")">@Model.DueDate.ToString("MMMM d, yyyy")</dd>
 
             <dt class="col-sm-4">Return Date</dt>
             <dd class="col-sm-8">@(Model.ReturnDate.HasValue ? Model.ReturnDate.Value.ToString("MMMM d, yyyy") : "Not returned yet")</dd>
@@ -38,15 +48,24 @@
                 {
                     <span class="badge bg-success fs-6">Returned</span>
                 }
-                else if (isOverdue)
+                else if (Model.IsOverdue)
                 {
-                    <span class="badge bg-danger fs-6">Overdue</span>
+                    <span class="badge bg-danger fs-6">Overdue (@Model.OverdueDays days)</span>
                 }
                 else
                 {
                     <span class="badge bg-primary fs-6">Active</span>
                 }
             </dd>
+
+            @if (Model.OverdueFee > 0)
+            {
+                <dt class="col-sm-4 text-danger">Overdue Fine</dt>
+                <dd class="col-sm-8">
+                    <span class="text-danger fw-bold fs-5">$@Model.OverdueFee.ToString("F2")</span>
+                    <span class="text-muted small">(@Model.OverdueDays day(s) × $@Borrowing.DailyOverdueFee.ToString("F2"))</span>
+                </dd>
+            }
         </dl>
 
         <div class="d-flex gap-2 mt-3">

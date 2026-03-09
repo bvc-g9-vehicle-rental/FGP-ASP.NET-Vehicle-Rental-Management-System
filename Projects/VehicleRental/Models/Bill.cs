@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehicleRental.Models;
 
@@ -22,9 +23,11 @@ public class Bill
     [Display(Name = "Additional Charges")]
     public decimal AdditionalCharges { get; set; }
 
+    [NotMapped]
     [Display(Name = "Tax Amount")]
     public decimal TaxAmount => (BaseAmount + AdditionalCharges) * (TaxRate / 100);
 
+    [NotMapped]
     [Display(Name = "Total Amount")]
     public decimal TotalAmount => BaseAmount + AdditionalCharges + TaxAmount;
 

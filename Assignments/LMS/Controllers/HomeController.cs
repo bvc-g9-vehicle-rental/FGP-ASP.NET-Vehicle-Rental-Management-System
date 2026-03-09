@@ -34,6 +34,7 @@ public class HomeController : Controller
         ViewBag.TotalReaders      = _readerRepo.GetAll().Count();
         ViewBag.ActiveBorrowings  = borrowings.Count(b => !b.IsReturned);
         ViewBag.OverdueBorrowings = borrowings.Count(b => !b.IsReturned && b.DueDate < DateTime.Today);
+        ViewBag.OutstandingFees   = borrowings.Where(b => !b.IsReturned).Sum(b => b.OverdueFee);
 
         var recent = borrowings
             .OrderByDescending(b => b.BorrowDate)

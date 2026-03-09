@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehicleRental.Models;
 
@@ -32,5 +33,6 @@ public class Customer
     [StringLength(200, ErrorMessage = "Address cannot exceed 200 characters.")]
     public string Address { get; set; } = string.Empty;
 
+    [NotMapped]
     public string FullName => $"{FirstName} {LastName}";
 }

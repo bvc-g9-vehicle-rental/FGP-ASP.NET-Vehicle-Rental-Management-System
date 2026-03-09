@@ -17,9 +17,12 @@ public class Reader
 
     [Phone(ErrorMessage = "Please enter a valid phone number.")]
     [StringLength(20)]
-    public string Phone { get; set; } = string.Empty;
+    public string? Phone { get; set; }
 
     [Display(Name = "Member Since")]
     [DataType(DataType.Date)]
     public DateTime MemberSince { get; set; } = DateTime.Today;
+
+    // Navigation property
+    public ICollection<Borrowing> Borrowings { get; set; } = new List<Borrowing>();
 }

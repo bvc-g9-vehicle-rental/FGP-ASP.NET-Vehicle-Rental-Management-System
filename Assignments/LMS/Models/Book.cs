@@ -16,12 +16,25 @@ public class Book
 
     [StringLength(20, ErrorMessage = "ISBN cannot exceed 20 characters.")]
     [Display(Name = "ISBN")]
-    public string ISBN { get; set; } = string.Empty;
+    public string? ISBN { get; set; }
+
+    [StringLength(50)]
+    public string? Genre { get; set; }
 
     [Range(1000, 2100, ErrorMessage = "Please enter a valid published year.")]
     [Display(Name = "Published Year")]
-    public int PublishedYear { get; set; }
+    public int? PublishedYear { get; set; }
 
-    [Display(Name = "Available")]
-    public bool IsAvailable { get; set; } = true;
+    [Required]
+    [Range(1, 999)]
+    [Display(Name = "Total Copies")]
+    public int TotalCopies { get; set; } = 1;
+
+    [Required]
+    [Range(0, 999)]
+    [Display(Name = "Available Copies")]
+    public int AvailableCopies { get; set; } = 1;
+
+    // Navigation property
+    public ICollection<Borrowing> Borrowings { get; set; } = new List<Borrowing>();
 }

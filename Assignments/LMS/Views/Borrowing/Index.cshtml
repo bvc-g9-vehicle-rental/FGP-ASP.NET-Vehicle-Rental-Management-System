@@ -1,12 +1,24 @@
 @model IEnumerable<Borrowing>
 @{
     ViewData["Title"] = "Borrowings";
+    var totalOutstanding = Model.Where(b => !b.IsReturned && b.OverdueFee > 0).Sum(b => b.OverdueFee);
+    var totalFeesPaid    = Model.Where(b =>  b.IsReturned && b.OverdueFee > 0).Sum(b => b.OverdueFee);
 }
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="mb-0">🔄 Borrowings</h2>
     <a asp-action="Create" class="btn btn-primary">+ New Borrowing</a>
 </div>
+
+@if (totalOutstanding > 0)
+{
+    <div class="alert alert-warning d-flex align-items-center gap-3">
+        <span>⚠️ Total outstanding overdue charges:</span>
+        <strong class="text-danger fs-5">$@totalOutstanding.ToString("F2")</strong>
+        <span class="text-muted small">(Rate: $@Borrowing.DailyOverdueFee.ToString("F2")/day)</span>
+        <a asp-controller="Report" asp-action="Overdue" class="ms-auto btn btn-sm btn-outline-danger">View Overdue Report</a>
+    </div>
+}
 
 @if (!Model.Any())
 {
@@ -25,33 +37,36 @@ else
                     <th>Due Date</th>
                     <th>Return Date</th>
                     <th>Status</th>
+                    <th class="text-end">Fine ($)</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var b in Model)
                 {
-                    var isOverdue = !b.IsReturned && b.DueDate < DateTime.Today;
-                    <tr class="@(isOverdue ? "table-danger" : "")">
+                    <tr class="@(b.IsOverdue ? "table-danger" : "")">
                         <td>@b.Id</td>
                         <td>@(b.Book?.Title ?? $"Book #{b.BookId}")</td>
                         <td>@(b.Reader?.Name ?? $"Reader #{b.ReaderId}")</td>
                         <td>@b.BorrowDate.ToString("MMM d, yyyy")</td>
-                        <td>@b.DueDate.ToString("MMM d, yyyy")</td>
+                        <td class="@(b.IsOverdue ? "fw-bold" : "")">@b.DueDate.ToString("MMM d, yyyy")</td>
                         <td>@(b.ReturnDate.HasValue ? b.ReturnDate.Value.ToString("MMM d, yyyy") : "—")</td>
                         <td>
                             @if (b.IsReturned)
                             {
                                 <span class="badge bg-success">Returned</span>
                             }
-                            else if (isOverdue)
+                            else if (b.IsOverdue)
                             {
-                                <span class="badge bg-danger">Overdue</span>
+                                <span class="badge bg-danger">Overdue (@b.OverdueDays d)</span>
                             }
                             else
                             {
                                 <span class="badge bg-primary">Active</span>
                             }
+                        </td>
+                        <td class="text-end @(b.OverdueFee > 0 ? "text-danger fw-semibold" : "text-muted")">
+                            @(b.OverdueFee > 0 ? $"${b.OverdueFee:F2}" : "—")
                         </td>
                         <td class="text-center">
                             <a asp-action="Details" asp-route-id="@b.Id" class="btn btn-sm btn-outline-secondary">Details</a>
@@ -61,6 +76,18 @@ else
                     </tr>
                 }
             </tbody>
+            <tfoot class="table-light fw-semibold">
+                <tr>
+                    <td colspan="7" class="text-end">Outstanding Fines:</td>
+                    <td class="text-end text-danger">$@totalOutstanding.ToString("F2")</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="7" class="text-end">Fines on Returned (late):</td>
+                    <td class="text-end text-secondary">$@totalFeesPaid.ToString("F2")</td>
+                    <td></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 }

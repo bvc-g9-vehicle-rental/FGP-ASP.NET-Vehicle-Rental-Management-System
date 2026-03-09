@@ -1,0 +1,116 @@
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>📊 Reports</h2>
+</div>
+
+<!-- Summary stat row -->
+<div class="row g-3 mb-5">
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-primary h-100">
+            <div class="card-body text-center">
+                <div class="display-5 fw-bold text-primary">@ViewBag.TotalBorrowings</div>
+                <div class="text-muted">Total Borrowings</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-success h-100">
+            <div class="card-body text-center">
+                <div class="display-5 fw-bold text-success">@ViewBag.ReturnedBorrowings</div>
+                <div class="text-muted">Returned</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-danger h-100">
+            <div class="card-body text-center">
+                <div class="display-5 fw-bold text-danger">@ViewBag.OverdueBorrowings</div>
+                <div class="text-muted">Currently Overdue</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-warning h-100">
+            <div class="card-body text-center">
+                <div class="display-5 fw-bold text-warning">$@((decimal)ViewBag.OutstandingFees).ToString("F2")</div>
+                <div class="text-muted">Outstanding Fines</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Highlights row -->
+<div class="row g-3 mb-5">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white fw-semibold">📖 Books Summary</div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-6">Total books</dt>
+                    <dd class="col-6">@ViewBag.TotalBooks</dd>
+                    <dt class="col-6">Available</dt>
+                    <dd class="col-6 text-success fw-semibold">@ViewBag.AvailableBooks</dd>
+                    <dt class="col-6">Currently borrowed</dt>
+                    <dd class="col-6 text-warning fw-semibold">@ViewBag.BorrowedBooks</dd>
+                    <dt class="col-6">Most borrowed title</dt>
+                    <dd class="col-6">@ViewBag.TopBookTitle <span class="badge bg-secondary">@ViewBag.TopBookCount times</span></dd>
+                </dl>
+                <a asp-action="Books" class="btn btn-sm btn-outline-primary mt-3">Full Book Report →</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header bg-dark text-white fw-semibold">👥 Readers Summary</div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-6">Total readers</dt>
+                    <dd class="col-6">@ViewBag.TotalReaders</dd>
+                    <dt class="col-6">Most active reader</dt>
+                    <dd class="col-6">@ViewBag.TopReaderName <span class="badge bg-secondary">@ViewBag.TopReaderCount borrows</span></dd>
+                    <dt class="col-6">Total fines (all time)</dt>
+                    <dd class="col-6 text-danger fw-semibold">$@((decimal)ViewBag.TotalOverdueFees).ToString("F2")</dd>
+                </dl>
+                <a asp-action="Readers" class="btn btn-sm btn-outline-success mt-3">Full Reader Report →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Report links -->
+<h5 class="fw-semibold mb-3">Generate a Report</h5>
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center py-4">
+                <div class="fs-1 mb-2">📋</div>
+                <h5>Borrowing History</h5>
+                <p class="text-muted small">Filter borrowings by date range, reader, book, or status.</p>
+                <a asp-action="Borrowings" class="btn btn-primary">Run Report</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-danger h-100">
+            <div class="card-body text-center py-4">
+                <div class="fs-1 mb-2">⚠️</div>
+                <h5>Overdue &amp; Charges</h5>
+                <p class="text-muted small">All overdue borrowings with calculated daily fines.</p>
+                <a asp-action="Overdue" class="btn btn-danger">View Overdue</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center py-4">
+                <div class="fs-1 mb-2">📖</div>
+                <h5>Book Usage Report</h5>
+                <p class="text-muted small">Books ranked by borrow count with availability status.</p>
+                <a asp-action="Books" class="btn btn-outline-primary">View Books</a>
+            </div>
+        </div>
+    </div>
+</div>

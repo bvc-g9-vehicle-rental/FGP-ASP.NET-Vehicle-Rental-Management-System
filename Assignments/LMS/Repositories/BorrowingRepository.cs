@@ -11,13 +11,51 @@ public class BorrowingRepository : IBorrowingRepository
             Id         = 1,
             BookId     = 4,
             ReaderId   = 1,
-            BorrowDate = new DateTime(2026, 2, 20),
-            DueDate    = new DateTime(2026, 3, 6),
-            IsReturned = false
+            BorrowDate = new DateTime(2026, 2, 1),
+            DueDate    = new DateTime(2026, 2, 15),
+            IsReturned = false   // overdue
+        },
+        new()
+        {
+            Id         = 2,
+            BookId     = 3,
+            ReaderId   = 2,
+            BorrowDate = new DateTime(2026, 1, 10),
+            DueDate    = new DateTime(2026, 1, 24),
+            ReturnDate = new DateTime(2026, 1, 30), // returned 6 days late
+            IsReturned = true
+        },
+        new()
+        {
+            Id         = 3,
+            BookId     = 1,
+            ReaderId   = 3,
+            BorrowDate = new DateTime(2026, 3, 1),
+            DueDate    = new DateTime(2026, 3, 15),
+            IsReturned = false   // active, not overdue
+        },
+        new()
+        {
+            Id         = 4,
+            BookId     = 2,
+            ReaderId   = 1,
+            BorrowDate = new DateTime(2026, 2, 10),
+            DueDate    = new DateTime(2026, 2, 24),
+            ReturnDate = new DateTime(2026, 2, 24), // returned on time
+            IsReturned = true
+        },
+        new()
+        {
+            Id         = 5,
+            BookId     = 5,
+            ReaderId   = 2,
+            BorrowDate = new DateTime(2026, 3, 5),
+            DueDate    = new DateTime(2026, 3, 19),
+            IsReturned = false   // active, not overdue
         },
     ];
 
-    private static int _nextId = 2;
+    private static int _nextId = 6;
 
     public IEnumerable<Borrowing> GetAll() => _borrowings.ToList();
 
