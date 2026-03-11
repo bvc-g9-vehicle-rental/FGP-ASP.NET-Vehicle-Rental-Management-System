@@ -1,6 +1,23 @@
 # Contributing Guide — Zoubera Issaka
 
-Hi Zoubera! This guide will help you get set up and understand what you need to work on.
+Hi Zoubera! First of all, thank you so much for agreeing to be my project teammate — I really appreciate it and I'm glad we're working together on this!
+
+I just want to say that I'm very easy-going and flexible when it comes to how we work on this. I've already built out the full project to get us started, but please don't feel like you can't touch anything. This is our project together, not just mine.
+
+You are completely welcome to:
+- Change anything you don't like — code, layout, styling, structure
+- Redo parts of the project your own way if you prefer
+- Take ownership of any feature or module and rewrite it
+- Contribute as much or as little as you'd like — there's no pressure either way
+- Suggest improvements and I'll be happy to work on them together
+
+Honestly, I just want us to submit a good project and do well. It doesn't matter to me who did what — we're a team and I'm happy however you want to contribute. So please make yourself at home in the code!
+
+If anything is confusing or you want to hop on a quick call to walk through it together, just let me know. 😊
+
+---
+
+This guide will help you get set up and understand the project structure.
 
 ## Your Branch
 
