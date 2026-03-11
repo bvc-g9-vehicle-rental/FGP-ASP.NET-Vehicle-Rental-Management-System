@@ -1,0 +1,345 @@
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" background="#FFFFFF">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ==================== PAGE LABELS ==================== -->
+    <!-- Login Page Label -->
+    <mxCell id="label_login" value="1. Login Page" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="10" width="200" height="24" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== LOGIN PAGE ==================== -->
+    <mxCell id="login_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="40" width="340" height="480" as="geometry" />
+    </mxCell>
+    <!-- Navbar -->
+    <mxCell id="login_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="40" width="340" height="40" as="geometry" />
+    </mxCell>
+    <!-- Card -->
+    <mxCell id="login_card" value="" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="80" y="120" width="260" height="360" as="geometry" />
+    </mxCell>
+    <mxCell id="login_title" value="Login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="80" y="130" width="260" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="login_user_lbl" value="Username" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="100" y="175" width="100" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="login_user_input" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="100" y="195" width="220" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="login_pass_lbl" value="Password" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="100" y="240" width="100" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="login_pass_input" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="100" y="260" width="220" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="login_btn" value="Login" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="100" y="310" width="220" height="36" as="geometry" />
+    </mxCell>
+    <mxCell id="login_register_link" value="Don't have an account? Register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+      <mxGeometry x="80" y="360" width="260" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== REGISTER PAGE ==================== -->
+    <mxCell id="label_register" value="2. Register Page" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="440" y="10" width="220" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="440" y="40" width="340" height="480" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="440" y="40" width="340" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_card" value="" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="480" y="100" width="260" height="400" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_title" value="Register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="480" y="110" width="260" height="30" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_user_lbl" value="Username" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="150" width="100" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_user_input" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="170" width="220" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_email_lbl" value="Email" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="208" width="100" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_email_input" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="228" width="220" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_pass_lbl" value="Password" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="266" width="100" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_pass_input" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="286" width="220" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_confirm_lbl" value="Confirm Password" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="324" width="140" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_confirm_input" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="500" y="344" width="220" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_btn" value="Register" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="500" y="390" width="220" height="36" as="geometry" />
+    </mxCell>
+    <mxCell id="reg_login_link" value="Already have an account? Login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#000000;fontStyle=4;" vertex="1" parent="1">
+      <mxGeometry x="480" y="436" width="260" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== DASHBOARD PAGE ==================== -->
+    <mxCell id="label_dash" value="3. Dashboard" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="840" y="10" width="220" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="840" y="40" width="560" height="480" as="geometry" />
+    </mxCell>
+    <!-- Navbar -->
+    <mxCell id="dash_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="840" y="40" width="560" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_nav_links" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#FFFFFF;" vertex="1" parent="1">
+      <mxGeometry x="840" y="80" width="560" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_nav_bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="840" y="80" width="560" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_nav_links2" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#FFFFFF;" vertex="1" parent="1">
+      <mxGeometry x="840" y="80" width="560" height="20" as="geometry" />
+    </mxCell>
+    <!-- Stat cards -->
+    <mxCell id="dash_card1" value="Total Vehicles&#xa;[  24  ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=11;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+      <mxGeometry x="860" y="120" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_card2" value="Available&#xa;[  18  ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=11;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+      <mxGeometry x="1000" y="120" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_card3" value="Customers&#xa;[  45  ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=11;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+      <mxGeometry x="1140" y="120" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_card4" value="Active Reservations&#xa;[  7  ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=11;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+      <mxGeometry x="1280" y="120" width="100" height="60" as="geometry" />
+    </mxCell>
+    <!-- Revenue card -->
+    <mxCell id="dash_revenue" value="Total Revenue&#xa;[ $12,450.00 ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;strokeColor=#000000;fontColor=#FFFFFF;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="860" y="200" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_outstanding" value="Outstanding&#xa;[ $3,200.00 ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="1080" y="200" width="160" height="60" as="geometry" />
+    </mxCell>
+    <!-- Recent reservations table -->
+    <mxCell id="dash_table_title" value="Recent Reservations" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="860" y="280" width="220" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_table_header" value="Customer  |  Vehicle  |  Start Date  |  End Date  |  Status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="860" y="304" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_row1" value="John Doe  |  2024 Toyota Camry  |  Mar 10  |  Mar 15  |  Active" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="860" y="332" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_row2" value="Jane Smith  |  2023 Honda CR-V  |  Mar 11  |  Mar 14  |  Pending" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="860" y="360" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="dash_row3" value="Bob Johnson  |  2022 Ford F-150  |  Mar 09  |  Mar 12  |  Completed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="860" y="388" width="520" height="28" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== VEHICLES PAGE ==================== -->
+    <mxCell id="label_vehicles" value="4. Manage Vehicles" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="560" width="220" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="590" width="560" height="400" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="590" width="560" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_nav2" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="40" y="630" width="560" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_title" value="Vehicles" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="660" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_add_btn" value="+ Add Vehicle" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="480" y="660" width="100" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_table_header" value="Make  |  Model  |  Year  |  Plate  |  Type  |  Rate  |  Available  |  Actions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="60" y="698" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_row1" value="Toyota  |  Camry  |  2024  |  ABC-123  |  Sedan  |  $65/day  |  Yes  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="726" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_row2" value="Honda  |  CR-V  |  2023  |  XYZ-456  |  SUV  |  $85/day  |  No  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="754" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_row3" value="Ford  |  F-150  |  2022  |  LMN-789  |  Truck  |  $95/day  |  Yes  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="782" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="veh_row4" value="Dodge  |  Caravan  |  2023  |  PQR-321  |  Van  |  $75/day  |  Yes  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="810" width="520" height="28" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== CUSTOMERS PAGE ==================== -->
+    <mxCell id="label_cust" value="5. Manage Customers" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="660" y="560" width="240" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="660" y="590" width="560" height="400" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="660" y="590" width="560" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_nav2" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="660" y="630" width="560" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_title" value="Customers" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="680" y="660" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_add_btn" value="+ Add Customer" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="1090" y="660" width="110" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_table_header" value="Name  |  Email  |  Phone  |  License #  |  Address  |  Actions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="680" y="698" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_row1" value="John Doe  |  john@email.com  |  403-111-2222  |  DL-001  |  123 Main St  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="680" y="726" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_row2" value="Jane Smith  |  jane@email.com  |  403-333-4444  |  DL-002  |  456 Oak Ave  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="680" y="754" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="cust_row3" value="Bob Johnson  |  bob@email.com  |  403-555-6666  |  DL-003  |  789 Pine Rd  |  [Edit] [Del]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="680" y="782" width="520" height="28" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== RESERVATIONS PAGE ==================== -->
+    <mxCell id="label_res" value="6. Manage Reservations" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1030" width="260" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="res_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1060" width="660" height="420" as="geometry" />
+    </mxCell>
+    <mxCell id="res_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1060" width="660" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="res_nav2" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1100" width="660" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="res_title" value="Reservations" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1130" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="res_add_btn" value="+ New Reservation" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="560" y="1130" width="120" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="res_table_header" value="Customer  |  Vehicle  |  Start  |  End  |  Days  |  Status  |  Notes  |  Actions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1168" width="620" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="res_row1" value="John Doe  |  Toyota Camry  |  Mar 10  |  Mar 15  |  5  |  Active  |  -  |  [Edit] [Cancel]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1196" width="620" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="res_row2" value="Jane Smith  |  Honda CR-V  |  Mar 11  |  Mar 14  |  3  |  Pending  |  -  |  [Edit] [Cancel]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1224" width="620" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="res_row3" value="Bob Johnson  |  Ford F-150  |  Mar 9  |  Mar 12  |  3  |  Completed  |  -  |  [View]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1252" width="620" height="28" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== BILLING PAGE ==================== -->
+    <mxCell id="label_bill" value="7. Billing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="760" y="1030" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="760" y="1060" width="560" height="420" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="760" y="1060" width="560" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_nav2" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="760" y="1100" width="560" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_title" value="Billing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1130" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_table_header" value="Reservation  |  Customer  |  Base  |  Tax(%)  |  Extra  |  Total  |  Paid  |  Actions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1168" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_row1" value="#1  |  John Doe  |  $325  |  10%  |  $0  |  $357.50  |  Yes  |  [View]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1196" width="520" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_row2" value="#2  |  Jane Smith  |  $255  |  10%  |  $20  |  $300.50  |  No  |  [View] [Mark Paid]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1224" width="520" height="28" as="geometry" />
+    </mxCell>
+    <!-- Bill detail card -->
+    <mxCell id="bill_detail_title" value="Bill Details" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1270" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_detail_card" value="Reservation: #2  |  Customer: Jane Smith  |  Vehicle: Honda CR-V&#xa;Base Amount: $255.00  |  Tax Rate: 10%  |  Additional: $20.00&#xa;Tax Amount: $27.50  |  Total: $302.50  |  Status: Unpaid" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;align=left;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1294" width="520" height="70" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_mark_paid" value="Mark as Paid" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1374" width="120" height="28" as="geometry" />
+    </mxCell>
+
+    <!-- ==================== REPORTS PAGE ==================== -->
+    <mxCell id="label_report" value="8. Reports" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1530" width="200" height="24" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1560" width="660" height="440" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1560" width="660" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_nav2" value="Dashboard  |  Vehicles  |  Customers  |  Reservations  |  Billing  |  Reports  |  Logout" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="40" y="1600" width="660" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_title" value="Reports" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1630" width="200" height="24" as="geometry" />
+    </mxCell>
+    <!-- Filter bar -->
+    <mxCell id="rep_filter_bg" value="" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1664" width="620" height="50" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_filter_lbl" value="Filter by:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="70" y="1672" width="60" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_date_from" value="From: [__/__/____]" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="135" y="1673" width="120" height="26" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_date_to" value="To: [__/__/____]" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="265" y="1673" width="120" height="26" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_type_filter" value="Type: [All ▼]" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="395" y="1673" width="100" height="26" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_gen_btn" value="Generate" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="505" y="1673" width="80" height="26" as="geometry" />
+    </mxCell>
+    <!-- Summary cards -->
+    <mxCell id="rep_sum1" value="Total Reservations&#xa;[ 42 ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1730" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_sum2" value="Total Revenue&#xa;[ $18,450 ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;strokeColor=#000000;fontColor=#FFFFFF;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="215" y="1730" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_sum3" value="Most Rented Vehicle&#xa;[ Toyota Camry ]" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="370" y="1730" width="160" height="60" as="geometry" />
+    </mxCell>
+    <!-- Report table -->
+    <mxCell id="rep_table_header" value="Date  |  Customer  |  Vehicle  |  Days  |  Total  |  Status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1810" width="620" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_row1" value="Mar 10  |  John Doe  |  Toyota Camry  |  5  |  $357.50  |  Paid" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1838" width="620" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_row2" value="Mar 11  |  Jane Smith  |  Honda CR-V  |  3  |  $302.50  |  Unpaid" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1866" width="620" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="rep_row3" value="Mar 09  |  Bob Johnson  |  Ford F-150  |  3  |  $313.50  |  Paid" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1894" width="620" height="28" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>
