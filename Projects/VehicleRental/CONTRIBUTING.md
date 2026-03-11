@@ -116,6 +116,8 @@ Bootstrap 5 is already included via CDN in `_Layout.cshtml`.
 
 ## What You Can Work On
 
+These are just suggestions — please don't feel any pressure. The project is already fully complete and working, so if you're happy with how everything looks and functions, there's absolutely nothing you need to change. But if you'd like to contribute, here are some ideas:
+
 - Improve the styling of any page in `Views/`
 - Make pages more responsive (mobile-friendly)
 - Improve the navbar in `_Layout.cshtml`
@@ -123,6 +125,12 @@ Bootstrap 5 is already included via CDN in `_Layout.cshtml`.
 - Improve the Dashboard (`Views/Home/Index.cshtml`) layout
 - Add success/error alert styling
 - Any UI improvements you think would look better
+
+Totally up to you — even just reviewing the code and giving feedback counts as contributing!
+
+## Presentation Recording
+
+For the final submission (due April 17), we need to record a short presentation of the live app. I'm happy to do the recording myself, but if you'd like to do it or we can do it together, that would be great too. Just let me know what works best for you and we'll figure it out. 😊
 
 ---
 
