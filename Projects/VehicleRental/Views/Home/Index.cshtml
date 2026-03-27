@@ -79,25 +79,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var r in Model)
+                    @if (Model.Any())
+                    {
+                        @foreach (var r in Model)
+                        {
+                            <tr>
+                                <td>@r.Id</td>
+                                <td>@(r.Customer?.FullName ?? "—")</td>
+                                <td>@(r.Vehicle?.DisplayName ?? "—")</td>
+                                <td>@r.StartDate.ToString("MMM d, yyyy")</td>
+                                <td>@r.EndDate.ToString("MMM d, yyyy")</td>
+                                <td>
+                                    <span class="badge @(r.Status switch {
+                                        VehicleRental.Models.ReservationStatus.Active    => "bg-success",
+                                        VehicleRental.Models.ReservationStatus.Pending   => "bg-warning text-dark",
+                                        VehicleRental.Models.ReservationStatus.Completed => "bg-secondary",
+                                        _                                                 => "bg-danger"
+                                    })">@r.Status</span>
+                                </td>
+                                <td>
+                                    <a asp-controller="Reservation" asp-action="Details" asp-route-id="@r.Id"
+                                       class="btn btn-sm btn-outline-secondary">View</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
                     {
                         <tr>
-                            <td>@r.Id</td>
-                            <td>@(r.Customer?.FullName ?? "—")</td>
-                            <td>@(r.Vehicle?.DisplayName ?? "—")</td>
-                            <td>@r.StartDate.ToString("MMM d, yyyy")</td>
-                            <td>@r.EndDate.ToString("MMM d, yyyy")</td>
-                            <td>
-                                <span class="badge @(r.Status switch {
-                                    VehicleRental.Models.ReservationStatus.Active    => "bg-success",
-                                    VehicleRental.Models.ReservationStatus.Pending   => "bg-warning text-dark",
-                                    VehicleRental.Models.ReservationStatus.Completed => "bg-secondary",
-                                    _                                                 => "bg-danger"
-                                })">@r.Status</span>
-                            </td>
-                            <td>
-                                <a asp-controller="Reservation" asp-action="Details" asp-route-id="@r.Id"
-                                   class="btn btn-sm btn-outline-secondary">View</a>
+                            <td colspan="7" class="text-center text-muted py-4">
+                                No reservations yet. Create one from the dashboard to populate recent activity.
                             </td>
                         </tr>
                     }

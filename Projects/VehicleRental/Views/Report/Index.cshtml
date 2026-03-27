@@ -2,6 +2,31 @@
 
 <h2 class="mb-4">Reports</h2>
 
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3 align-items-end">
+            <div class="col-md-3">
+                <label class="form-label fw-semibold" for="startDate">Start Date</label>
+                <input id="startDate" name="startDate" type="date" value="@ViewBag.StartDate" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-semibold" for="endDate">End Date</label>
+                <input id="endDate" name="endDate" type="date" value="@ViewBag.EndDate" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label fw-semibold" for="vehicleType">Vehicle Type</label>
+                <select id="vehicleType" name="vehicleType" class="form-select" asp-items="@(ViewBag.VehicleTypes as IEnumerable<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem>)">
+                    <option value="">All Types</option>
+                </select>
+            </div>
+            <div class="col-md-3 d-flex gap-2">
+                <button type="submit" class="btn btn-dark">Apply Filters</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Reset</a>
+            </div>
+        </form>
+    </div>
+</div>
+
 <div class="row g-4">
 
     <!-- Summary Cards -->

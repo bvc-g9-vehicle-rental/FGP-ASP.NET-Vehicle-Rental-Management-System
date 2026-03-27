@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using VehicleRental.Models;
 using VehicleRental.Repositories;
 
@@ -31,16 +32,29 @@ public class ReportController : Controller
     }
 
     // GET: /Report
-    public IActionResult Index()
+    public IActionResult Index(DateTime? startDate, DateTime? endDate, VehicleType? vehicleType)
     {
         var redirect = RequireLogin();
         if (redirect is not null) return redirect;
 
         var reservations = _reservationRepo.GetAll().ToList();
-
-        var bills = _billRepo.GetAll().ToList();
-
         var vehicles = _vehicleRepo.GetAll().ToList();
+
+        if (startDate.HasValue)
+            reservations = reservations.Where(r => r.StartDate.Date >= startDate.Value.Date).ToList();
+
+        if (endDate.HasValue)
+            reservations = reservations.Where(r => r.EndDate.Date <= endDate.Value.Date).ToList();
+
+        if (vehicleType.HasValue)
+            reservations = reservations
+                .Where(r => r.Vehicle?.VehicleType == vehicleType.Value)
+                .ToList();
+
+        var reservationIds = reservations.Select(r => r.Id).ToHashSet();
+        var bills = _billRepo.GetAll()
+            .Where(b => reservationIds.Contains(b.ReservationId))
+            .ToList();
 
         // Revenue by vehicle type
         ViewBag.RevenueByType = bills
@@ -70,6 +84,12 @@ public class ReportController : Controller
         ViewBag.TotalReservations = reservations.Count;
         ViewBag.FleetUtilization  = vehicles.Count == 0 ? 0 :
             (double)vehicles.Count(v => !v.IsAvailable) / vehicles.Count * 100;
+        ViewBag.StartDate = startDate?.ToString("yyyy-MM-dd");
+        ViewBag.EndDate = endDate?.ToString("yyyy-MM-dd");
+        ViewBag.SelectedVehicleType = vehicleType;
+        ViewBag.VehicleTypes = Enum.GetValues<VehicleType>()
+            .Select(type => new SelectListItem(type.ToString(), type.ToString(), type == vehicleType))
+            .ToList();
 
         return View();
     }

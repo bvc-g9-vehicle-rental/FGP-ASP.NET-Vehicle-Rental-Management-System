@@ -62,3 +62,6 @@ $RECYCLE.BIN/
 
 # Deployment artifacts
 *.zip
+
+# Local-only presentation notes
+presentation-script-notepad.txt

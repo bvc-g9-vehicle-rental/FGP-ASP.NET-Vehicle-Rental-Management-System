@@ -17,28 +17,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var v in Model)
+                    @if (Model.Any())
+                    {
+                        @foreach (var v in Model)
+                        {
+                            <tr>
+                                <td>@v.Id</td>
+                                <td>@v.DisplayName</td>
+                                <td>@v.VehicleType</td>
+                                <td>@v.LicensePlate</td>
+                                <td>$@v.DailyRate.ToString("N2")</td>
+                                <td>
+                                    @if (v.IsAvailable)
+                                    {
+                                        <span class="badge bg-success">Available</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">Rented</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@v.Id" class="btn btn-sm btn-outline-secondary">Details</a>
+                                    <a asp-action="Edit"    asp-route-id="@v.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <a asp-action="Delete"  asp-route-id="@v.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
                     {
                         <tr>
-                            <td>@v.Id</td>
-                            <td>@v.DisplayName</td>
-                            <td>@v.VehicleType</td>
-                            <td>@v.LicensePlate</td>
-                            <td>$@v.DailyRate.ToString("N2")</td>
-                            <td>
-                                @if (v.IsAvailable)
-                                {
-                                    <span class="badge bg-success">Available</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-danger">Rented</span>
-                                }
-                            </td>
-                            <td>
-                                <a asp-action="Details" asp-route-id="@v.Id" class="btn btn-sm btn-outline-secondary">Details</a>
-                                <a asp-action="Edit"    asp-route-id="@v.Id" class="btn btn-sm btn-outline-primary">Edit</a>
-                                <a asp-action="Delete"  asp-route-id="@v.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                            <td colspan="7" class="text-center text-muted py-4">
+                                No vehicles in the fleet yet. Add your first vehicle to begin taking reservations.
                             </td>
                         </tr>
                     }

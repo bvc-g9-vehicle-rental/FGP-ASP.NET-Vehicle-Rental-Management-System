@@ -17,18 +17,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var c in Model)
+                    @if (Model.Any())
+                    {
+                        @foreach (var c in Model)
+                        {
+                            <tr>
+                                <td>@c.Id</td>
+                                <td>@c.FullName</td>
+                                <td>@c.Email</td>
+                                <td>@c.Phone</td>
+                                <td>@c.LicenseNumber</td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@c.Id" class="btn btn-sm btn-outline-secondary">Details</a>
+                                    <a asp-action="Edit"    asp-route-id="@c.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <a asp-action="Delete"  asp-route-id="@c.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
                     {
                         <tr>
-                            <td>@c.Id</td>
-                            <td>@c.FullName</td>
-                            <td>@c.Email</td>
-                            <td>@c.Phone</td>
-                            <td>@c.LicenseNumber</td>
-                            <td>
-                                <a asp-action="Details" asp-route-id="@c.Id" class="btn btn-sm btn-outline-secondary">Details</a>
-                                <a asp-action="Edit"    asp-route-id="@c.Id" class="btn btn-sm btn-outline-primary">Edit</a>
-                                <a asp-action="Delete"  asp-route-id="@c.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                            <td colspan="6" class="text-center text-muted py-4">
+                                No customers yet. Add a customer before creating a reservation.
                             </td>
                         </tr>
                     }

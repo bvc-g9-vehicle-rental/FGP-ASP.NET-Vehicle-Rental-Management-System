@@ -14,32 +14,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var b in Model)
+                    @if (Model.Any())
+                    {
+                        @foreach (var b in Model)
+                        {
+                            <tr>
+                                <td>@b.Id</td>
+                                <td>#@b.ReservationId</td>
+                                <td>@(b.Reservation?.Customer?.FullName ?? "—")</td>
+                                <td>@(b.Reservation?.Vehicle?.DisplayName ?? "—")</td>
+                                <td>$@b.BaseAmount.ToString("N2")</td>
+                                <td>$@b.TaxAmount.ToString("N2")</td>
+                                <td>$@b.AdditionalCharges.ToString("N2")</td>
+                                <td class="fw-bold">$@b.TotalAmount.ToString("N2")</td>
+                                <td>
+                                    @if (b.IsPaid)
+                                    { <span class="badge bg-success">Paid</span> }
+                                    else
+                                    { <span class="badge bg-warning text-dark">Unpaid</span> }
+                                </td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@b.Id" class="btn btn-sm btn-outline-secondary">Details</a>
+                                    @if (!b.IsPaid)
+                                    {
+                                        <form asp-action="MarkPaid" asp-route-id="@b.Id" method="post" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="btn btn-sm btn-success">Mark Paid</button>
+                                        </form>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
                     {
                         <tr>
-                            <td>@b.Id</td>
-                            <td>#@b.ReservationId</td>
-                            <td>@(b.Reservation?.Customer?.FullName ?? "—")</td>
-                            <td>@(b.Reservation?.Vehicle?.DisplayName ?? "—")</td>
-                            <td>$@b.BaseAmount.ToString("N2")</td>
-                            <td>$@b.TaxAmount.ToString("N2")</td>
-                            <td>$@b.AdditionalCharges.ToString("N2")</td>
-                            <td class="fw-bold">$@b.TotalAmount.ToString("N2")</td>
-                            <td>
-                                @if (b.IsPaid)
-                                { <span class="badge bg-success">Paid</span> }
-                                else
-                                { <span class="badge bg-warning text-dark">Unpaid</span> }
-                            </td>
-                            <td>
-                                <a asp-action="Details" asp-route-id="@b.Id" class="btn btn-sm btn-outline-secondary">Details</a>
-                                @if (!b.IsPaid)
-                                {
-                                    <form asp-action="MarkPaid" asp-route-id="@b.Id" method="post" class="d-inline">
-                                        @Html.AntiForgeryToken()
-                                        <button type="submit" class="btn btn-sm btn-success">Mark Paid</button>
-                                    </form>
-                                }
+                            <td colspan="10" class="text-center text-muted py-4">
+                                No bills yet. Bills are created automatically when a reservation is made.
                             </td>
                         </tr>
                     }
