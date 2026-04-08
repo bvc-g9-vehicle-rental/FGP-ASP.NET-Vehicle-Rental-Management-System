@@ -40,9 +40,15 @@
     <div class="card-footer d-flex gap-2">
         @if (!Model.IsPaid)
         {
+            <!-- Stripe Checkout -->
+            <form asp-action="Checkout" asp-route-id="@Model.Id" method="post">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-primary btn-sm">💳 Pay with Stripe</button>
+            </form>
+            <!-- Manual override -->
             <form asp-action="MarkPaid" asp-route-id="@Model.Id" method="post">
                 @Html.AntiForgeryToken()
-                <button type="submit" class="btn btn-success btn-sm">Mark as Paid</button>
+                <button type="submit" class="btn btn-outline-success btn-sm">Mark as Paid (Admin)</button>
             </form>
         }
         <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Back</a>
