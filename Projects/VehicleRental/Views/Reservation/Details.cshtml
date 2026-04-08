@@ -66,7 +66,7 @@
 </div>
 
 @* Store notes safely in a data attribute to avoid XSS *@
-<span id="notes-data" data-notes="@Html.AttributeEncode(Model.Notes ?? "")" style="display:none;"></span>
+<span id="notes-data" data-notes="@Html.Encode(Model.Notes ?? "")" style="display:none;"></span>
 
 @section Scripts {
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
