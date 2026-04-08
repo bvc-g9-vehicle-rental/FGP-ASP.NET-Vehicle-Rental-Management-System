@@ -219,7 +219,7 @@
       <mxGeometry x="40" y="1030" width="260" height="24" as="geometry" />
     </mxCell>
     <mxCell id="res_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;" vertex="1" parent="1">
-      <mxGeometry x="40" y="1060" width="660" height="420" as="geometry" />
+      <mxGeometry x="40" y="1060" width="660" height="480" as="geometry" />
     </mxCell>
     <mxCell id="res_nav" value="Vehicle Rental MS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#000000;fontStyle=1;fontSize=13;" vertex="1" parent="1">
       <mxGeometry x="40" y="1060" width="660" height="40" as="geometry" />
@@ -246,6 +246,20 @@
       <mxGeometry x="60" y="1252" width="620" height="28" as="geometry" />
     </mxCell>
 
+    <!-- Create Reservation sub-section with Leaflet Pickup Map -->
+    <mxCell id="res_create_lbl" value="Create Reservation — with Pickup Location Map (Leaflet.js)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1296" width="400" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="res_create_form" value="Customer: [Select ▼]     Vehicle: [Select ▼]     Start Date: [date]     End Date: [date]     Notes: [__________]" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1318" width="620" height="26" as="geometry" />
+    </mxCell>
+    <mxCell id="res_map_lbl" value="📍 Pickup Location  (click map to pin — optional)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1350" width="300" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="res_map_box" value="[ Interactive Map — OpenStreetMap via Leaflet.js ]&#xa;&#xa;Centred on Calgary, AB.  Click anywhere to drop a pickup pin.&#xa;Coordinates are automatically saved to reservation Notes." style="rounded=4;whiteSpace=wrap;html=1;fillColor=#E6E6E6;strokeColor=#000000;fontSize=10;fontColor=#000000;verticalAlign=middle;" vertex="1" parent="1">
+      <mxGeometry x="60" y="1372" width="620" height="84" as="geometry" />
+    </mxCell>
+
     <!-- ==================== BILLING PAGE ==================== -->
     <mxCell id="label_bill" value="7. Billing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
       <mxGeometry x="760" y="1030" width="200" height="24" as="geometry" />
@@ -268,7 +282,7 @@
     <mxCell id="bill_row1" value="#1  |  John Doe  |  $325  |  10%  |  $0  |  $357.50  |  Yes  |  [View]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
       <mxGeometry x="780" y="1196" width="520" height="28" as="geometry" />
     </mxCell>
-    <mxCell id="bill_row2" value="#2  |  Jane Smith  |  $255  |  10%  |  $20  |  $300.50  |  No  |  [View] [Mark Paid]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+    <mxCell id="bill_row2" value="#2  |  Jane Smith  |  $255  |  10%  |  $20  |  $300.50  |  No  |  [View] [Pay ▶ Stripe]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeColor=#000000;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
       <mxGeometry x="780" y="1224" width="520" height="28" as="geometry" />
     </mxCell>
     <!-- Bill detail card -->
@@ -278,8 +292,14 @@
     <mxCell id="bill_detail_card" value="Reservation: #2  |  Customer: Jane Smith  |  Vehicle: Honda CR-V&#xa;Base Amount: $255.00  |  Tax Rate: 10%  |  Additional: $20.00&#xa;Tax Amount: $27.50  |  Total: $302.50  |  Status: Unpaid" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;fontColor=#000000;align=left;" vertex="1" parent="1">
       <mxGeometry x="780" y="1294" width="520" height="70" as="geometry" />
     </mxCell>
-    <mxCell id="bill_mark_paid" value="Mark as Paid" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;fontSize=11;" vertex="1" parent="1">
-      <mxGeometry x="780" y="1374" width="120" height="28" as="geometry" />
+    <mxCell id="bill_mark_paid" value="Mark as Paid (Admin)" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#E6E6E6;fontColor=#000000;strokeColor=#000000;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1374" width="150" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_stripe_btn" value="💳 Pay with Stripe" style="rounded=4;whiteSpace=wrap;html=1;fillColor=#1A1A1A;fontColor=#FFFFFF;strokeColor=#1A1A1A;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="940" y="1374" width="150" height="28" as="geometry" />
+    </mxCell>
+    <mxCell id="bill_stripe_note" value="↑ Redirects to Stripe Checkout (online card payment)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#000000;fontStyle=2;" vertex="1" parent="1">
+      <mxGeometry x="780" y="1408" width="350" height="16" as="geometry" />
     </mxCell>
 
     <!-- ==================== REPORTS PAGE ==================== -->
