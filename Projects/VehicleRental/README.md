@@ -19,8 +19,8 @@ A web-based vehicle rental management system built with ASP.NET MVC for Bow Vall
 2. **Dashboard** — Overview of fleet, reservations, customers, and revenue
 3. **Vehicle Management** — Add, edit, delete vehicles; track availability
 4. **Customer Management** — Full customer database with CRUD operations
-5. **Reservation Management** — Create, modify, and cancel reservations
-6. **Billing** — Auto-calculate rental cost, tax, and additional charges
+5. **Reservation Management** — Create, modify, and cancel reservations with an interactive pickup location map (Leaflet.js + OpenStreetMap)
+6. **Billing** — Auto-calculate rental cost, tax, and additional charges; online payment via Stripe Checkout
 7. **Reports** — Reservation history, revenue summary, and vehicle availability reports
 
 ## Getting Started
@@ -47,6 +47,8 @@ dotnet run
 | Database | Entity Framework Core + Azure SQL |
 | Auth | Custom session-based (SHA-256) |
 | UI | Razor Views + Bootstrap 5 |
+| Payments | Stripe Checkout (Stripe.net) |
+| Maps | Leaflet.js + OpenStreetMap (CDN, no API key) |
 | Hosting | Azure App Service (Free F1) |
 | Version Control | Git + GitHub |
 
