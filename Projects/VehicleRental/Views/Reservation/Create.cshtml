@@ -53,4 +53,50 @@
     </div>
 </div>
 
-@section Scripts { <partial name="_ValidationScriptsPartial" /> }
+<!-- Leaflet Pickup Location Map -->
+<div class="card shadow-sm mt-4" style="max-width:550px">
+    <div class="card-header bg-dark text-white">
+        📍 Pickup Location <span class="text-white-50 fw-normal small">(optional — click map to pin)</span>
+    </div>
+    <div class="card-body p-2">
+        <div id="pickup-info" class="text-muted small px-1 mb-2">Click anywhere on the map to set a pickup location.</div>
+        <div id="pickup-map" style="height:280px; border-radius:6px;"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize map centred on Calgary, AB
+        var map = L.map('pickup-map').setView([51.0447, -114.0719], 11);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = null;
+
+        map.on('click', function (e) {
+            var lat = e.latlng.lat.toFixed(5);
+            var lng = e.latlng.lng.toFixed(5);
+
+            document.getElementById('pickup-info').innerHTML =
+                '📍 <strong>Pickup set:</strong> ' + lat + ', ' + lng +
+                ' &nbsp;<span class="text-muted">(saved with reservation notes)</span>';
+
+            if (marker) {
+                marker.setLatLng(e.latlng);
+            } else {
+                marker = L.marker(e.latlng).addTo(map);
+            }
+
+            // Append coordinates to the Notes field (removing any previous location tag)
+            var notesEl = document.querySelector('textarea[name="Notes"]');
+            var cleaned = notesEl.value.replace(/\s*\[Pickup:[^\]]*\]/g, '').trim();
+            notesEl.value = cleaned ? cleaned + '\n[Pickup: ' + lat + ',' + lng + ']'
+                                    : '[Pickup: ' + lat + ',' + lng + ']';
+        });
+    </script>
+}

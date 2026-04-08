@@ -56,3 +56,34 @@
         <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Back</a>
     </div>
 </div>
+
+<!-- Leaflet Pickup Location Map (shown only when Notes contain a [Pickup: lat,lng] tag) -->
+<div id="map-card" class="card shadow-sm mt-4" style="max-width:550px; display:none;">
+    <div class="card-header bg-dark text-white">📍 Pickup Location</div>
+    <div class="card-body p-2">
+        <div id="pickup-map" style="height:280px; border-radius:6px;"></div>
+    </div>
+</div>
+
+@* Store notes safely in a data attribute to avoid XSS *@
+<span id="notes-data" data-notes="@Html.AttributeEncode(Model.Notes ?? "")" style="display:none;"></span>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var notes = document.getElementById('notes-data').getAttribute('data-notes') || '';
+        var match = notes.match(/\[Pickup:\s*(-?\d+\.?\d*),(-?\d+\.?\d*)\]/);
+        if (match) {
+            var lat = parseFloat(match[1]);
+            var lng = parseFloat(match[2]);
+            document.getElementById('map-card').style.display = 'block';
+            var map = L.map('pickup-map').setView([lat, lng], 14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            L.marker([lat, lng]).addTo(map).bindPopup('Pickup Location').openPopup();
+        }
+    </script>
+}
