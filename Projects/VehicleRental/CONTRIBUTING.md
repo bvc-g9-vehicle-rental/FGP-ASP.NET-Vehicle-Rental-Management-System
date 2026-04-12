@@ -25,7 +25,7 @@ Your branch is **`zoubera-dev`**. Always work here — never directly on `main`.
 
 ```bash
 # Clone the repo (first time only)
-git clone https://github.com/bvc-g9-vehicle-rental/Vehicle-Rental-Management-System.git
+git clone https://github.com/bvc-g9-vehicle-rental/FGP-ASP.NET-Vehicle-Rental-Management-System.git
 cd Vehicle-Rental-Management-System
 
 # Switch to your branch

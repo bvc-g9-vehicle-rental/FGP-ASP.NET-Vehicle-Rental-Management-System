@@ -33,7 +33,7 @@ A web-based vehicle rental management system built with ASP.NET MVC for Bow Vall
 
 ### Run Locally
 ```bash
-git clone https://github.com/bvc-g9-vehicle-rental/Vehicle-Rental-Management-System.git
+git clone https://github.com/bvc-g9-vehicle-rental/FGP-ASP.NET-Vehicle-Rental-Management-System.git
 cd Vehicle-Rental-Management-System
 dotnet run
 ```
