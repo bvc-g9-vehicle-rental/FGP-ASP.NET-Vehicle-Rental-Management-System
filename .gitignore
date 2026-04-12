@@ -1,3 +1,6 @@
+## Secrets - never commit
+Projects/VehicleRental/appsettings.json
+
 ## .NET / ASP.NET Core
 bin/
 obj/
