@@ -34,7 +34,7 @@ git checkout zoubera-dev
 
 ## Running the App Locally
 
-You need: [.NET 9 SDK](https://dotnet.microsoft.com/download) + [SQL Server LocalDB](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb)
+You need: [.NET 10 SDK](https://dotnet.microsoft.com/download) + [SQL Server LocalDB](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb)
 
 ```bash
 dotnet run

@@ -37,13 +37,13 @@ git clone https://github.com/bvc-g9-vehicle-rental/Vehicle-Rental-Management-Sys
 cd Vehicle-Rental-Management-System
 dotnet run
 ```
-> Requires .NET 9 SDK and SQL Server LocalDB
+> Requires .NET 10 SDK and SQL Server LocalDB
 
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Framework | ASP.NET MVC (.NET 9) |
+| Framework | ASP.NET MVC (.NET 10) |
 | Database | Entity Framework Core + Azure SQL |
 | Auth | Custom session-based (SHA-256) |
 | UI | Razor Views + Bootstrap 5 |
