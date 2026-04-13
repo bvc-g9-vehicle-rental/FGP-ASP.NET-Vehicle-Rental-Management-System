@@ -81,6 +81,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         }
+        @if (TempData["Info"] is string infoMsg)
+        {
+            <div class="alert alert-info alert-dismissible fade show shadow-sm" role="alert">
+                @infoMsg
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (TempData["Error"] is string errorMsg)
+        {
+            <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                @errorMsg
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
