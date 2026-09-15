@@ -42,7 +42,7 @@ dotnet run
 
 Then open `http://localhost:5254` in your browser.
 
-Or just use the live app: **[https://vehicle-rental-app.azurewebsites.net](https://vehicle-rental-app.azurewebsites.net)**
+(The Azure deployment is no longer live — run it locally as above.)
 
 ---
 
@@ -149,4 +149,4 @@ Use clear commit messages starting with `ui:` or `style:` so it's easy to see wh
 
 ## Questions?
 
-Message Eddie on Teams/WhatsApp — or check the live app at [https://vehicle-rental-app.azurewebsites.net](https://vehicle-rental-app.azurewebsites.net) to see how things currently look.
+Message Eddie on Teams/WhatsApp — the Azure deployment is no longer live, so run the app locally (see above) to see how things currently look.
