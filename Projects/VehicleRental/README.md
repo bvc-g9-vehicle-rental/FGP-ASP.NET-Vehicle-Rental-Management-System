@@ -4,7 +4,7 @@ A web-based vehicle rental management system built with ASP.NET MVC for Bow Vall
 
 ## Live Demo
 
-🌐 **[https://vehicle-rental-app.azurewebsites.net](https://vehicle-rental-app.azurewebsites.net)**
+The Azure deployment is no longer live. See "Run Locally" below to run it yourself.
 
 ## Team Members
 
@@ -25,8 +25,8 @@ A web-based vehicle rental management system built with ASP.NET MVC for Bow Vall
 
 ## Getting Started
 
-### Use the Live App
-1. Visit [https://vehicle-rental-app.azurewebsites.net](https://vehicle-rental-app.azurewebsites.net)
+### Use the App (after running locally, see below)
+1. Open the app in your browser
 2. Click **Register** to create a new account, or use the default admin:
    - Username: `admin`
    - Password: `Admin123!`
